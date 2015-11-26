@@ -7,17 +7,14 @@
     		<h1><a href="">My Blog</a></h1>
     	</div>
 
-    	<div>
-    		<p>published: 11/25/2015, 6:31pm</p>
-    		<h2><a href="">My first post</a></h2>
-    		<p>blahdkjfslkdjfs sldfksldkfs fsdflksdlfksdf</p>
-    	</div>	
+    	{% for post in posts %}
 
-    	<div>
-    		<p>published: 11/25/2015, 6:25pm</p>
-    		<h2><a href="">My second post</a></h2>
-    		<p>squirreeeels! sdfsdfsdf </p>
-    	</div>	
+    		<div>
+    			<p>published: {{post.published_date}}</p>
+    			<h1><a href="">{{post.title}}</a></h1>
+    			<p>{{post.text|linebreaks }}</p>
+ 		{% endfor %}	
+    		</div>	
 
     </body>
 </html>
